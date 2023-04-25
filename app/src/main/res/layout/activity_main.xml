@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/default_main_layout_padding"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/startImage"
+        android:layout_width="match_parent"
+        android:layout_height="220sp"
+        android:contentDescription="@string/start"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/flStart"
+        android:src="@drawable/ic_start"/>
+
+    <FrameLayout
+        android:id="@+id/flStart"
+        android:layout_width="150sp"
+        android:layout_height="150sp"
+        android:background="@drawable/ripple_circular_start_button"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/start_button_text"
+            android:textStyle="bold"
+            android:textSize="@dimen/default_button_text_size"
+            android:textColor="@color/colorPrimary"
+            android:gravity="center"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/flBmiCalculator"
+        android:layout_width="70sp"
+        android:layout_height="70sp"
+        android:background="@drawable/circular_color_accent_background"
+        app:layout_constraintTop_toBottomOf="@+id/flStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/flHistory"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="BMI"
+            android:textStyle="bold"
+            android:textSize="@dimen/default_button_text_size"
+            android:textColor="@color/white"
+            android:gravity="center"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvTitleCalculator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculator"
+        android:textStyle="bold"
+        android:textSize="@dimen/default_button_text_size"
+        android:textColor="@color/colorSecondary"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/flBmiCalculator"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/flHistory"/>
+
+    <FrameLayout
+        android:id="@+id/flHistory"
+        android:layout_width="70sp"
+        android:layout_height="70sp"
+        android:background="@drawable/circular_color_accent_background"
+        app:layout_constraintTop_toBottomOf="@+id/flStart"
+        app:layout_constraintStart_toEndOf="@id/flBmiCalculator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_calender"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="History"
+        android:textStyle="bold"
+        android:textSize="@dimen/default_button_text_size"
+        android:textColor="@color/colorSecondary"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/flHistory"
+        app:layout_constraintStart_toEndOf="@id/flBmiCalculator"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
